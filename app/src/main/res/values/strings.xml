@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Weather App</string>
+
+    <string name="database_file_name" translatable="false">WeatherApp.db</string>
+
+    <!-- Date And Time Format  -->
+    <string name="constantDateTimeToFormat" translatable="false">EEE, d MMM yyyy HH:mm a</string>
+
+    <!--Intent-->
+    <string name="intentScreenTitle" translatable="false">ScreenTitle</string>
+
+    <!--Json-->
+    <string name="gsonCityObject" translatable="false">CityObjectJson</string>
+    <string name="gsonHistoryObject" translatable="false">HistoryObjectJson</string>
+
+    <!--Labels-->
+    <string name="textCities">Cities</string>
+    <string name="textWeatherCityInfo">Weather information for %1$s received on %2$s</string>
+    <string name="textDescription">Description:</string>
+    <string name="textTemp">Temp:</string>
+    <string name="textHumidity">Humidity:</string>
+    <string name="textWindSpeed">Wind speed:</string>
+    <string name="textCelsiusLabel">Celsius</string>
+    <string name="textCelsiusTemp" translatable="false">°C</string>
+    <string name="textKelvinLabel">Kelvin</string>
+    <string name="textKelvinTemp" translatable="false">°K</string>
+    <string name="textKMH">Km/H</string>
+    <string name="textMH">M/H</string>
+    <string name="textHistorical">Historical</string>
+
+    <!--Action-->
+    <string name="actionEnterCityName">Enter city name</string>
+    <string name="actionSave">Save</string>
+    <string name="actionCancel">Cancel</string>
+    <string name="actionBack">Back</string>
+    <string name="actionDismiss">Dismiss</string>
+    <string name="actionRefresh">Refresh</string>
+    <string name="actionConfirm">Confirm</string>
+    <string name="actionAddNewCity">Add New City</string>
+
+    <!--Waiting-->
+    <string name="waitPleaseWait">Please wait…</string>
+
+    <!--Errors-->
+    <string name="errorNoCitiesForNow">No cities for now!</string>
+    <string name="errorNoHistoryFound">No history found!</string>
+
+    <!--Alert-->
+    <string name="alertConfirmDeleteThisCity">Confirm Delete %1$s from list</string>
+
+    <!--  Network Error Message -->
+    <string name="timeOutConnection">Timeout connection</string>
+    <string name="authFailureError">Authentication failure error</string>
+    <string name="serverError">Error while connecting to server</string>
+    <string name="networkError">Network error</string>
+    <string name="parseError">Parsing error</string>
+    <string name="noInternetConnection">No internet connection</string>
+    <string name="textClientErrorMessage">Client Error</string>
+    <string name="textErrorMessage">Something went wrong, try again</string>
+    <string name="errorApplicationNotFound">Application not found in your device!</string>
+    <string name="errorBadRequest">Bad request</string>
+    <string name="errorForbidden">Forbidden</string>
+    <string name="errorRequestNotFound">Request not found</string>
+    <string name="errorBadGateway">Bad gateway</string>
+
+</resources>

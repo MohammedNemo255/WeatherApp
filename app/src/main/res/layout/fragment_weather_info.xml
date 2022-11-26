@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="loadModel"
+            type="com.nemodroid.weatherapp.utils.handler.LoadModel" />
+
+        <variable
+            name="errorModel"
+            type="com.nemodroid.weatherapp.utils.handler.ErrorModel" />
+
+        <variable
+            name="dataModel"
+            type="com.nemodroid.weatherapp.business.domain.api_response.WeatherResponse" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/smallPadding">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/defaultPadding"
+                    android:visibility="gone"
+                    app:animateVisibilityLeftRight="@{!errorModel.withError &amp;&amp; !loadModel.showLayout}">
+
+                    <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                        android:id="@+id/tvCityWeather"
+                        style="@style/textMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <include layout="@layout/space_medium" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        imageUrl='@{dataModel.weather.size() > 0 ? dataModel.weather.get(0).iconUrl:""}'
+                        android:layout_width="@dimen/large_logo_size"
+                        android:layout_height="@dimen/large_logo_size" />
+
+                    <include layout="@layout/space_medium" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="@dimen/smallPadding">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                                style="@style/textSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/mediumPadding"
+                                android:text="@string/textDescription" />
+
+                            <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                                style="@style/textMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text='@{dataModel.weather.size() > 0 ? dataModel.weather.get(0).description:""}' />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <include layout="@layout/space_small" />
+
+                        <!--                        <include layout="@layout/separator_light_grey_line" />-->
+
+                        <include layout="@layout/space_small" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearTemperature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="@dimen/smallPadding">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                                style="@style/textSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/mediumPadding"
+                                android:text="@string/textTemp" />
+
+                            <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                                style="@style/textMedium"
+                                temperature="@{dataModel.main.temp}"
+                                toCelsius="@{dataModel.main.toCelsius}"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <include layout="@layout/space_small" />
+
+                        <!--                        <include layout="@layout/separator_light_grey_line" />-->
+
+                        <include layout="@layout/space_small" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearHumidity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="@dimen/smallPadding">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                                style="@style/textSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/mediumPadding"
+                                android:text="@string/textHumidity" />
+
+                            <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                                style="@style/textMedium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text='@{dataModel.main.humidity + "%"}' />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <include layout="@layout/space_small" />
+
+                        <!--                        <include layout="@layout/separator_light_grey_line" />-->
+
+                        <include layout="@layout/space_small" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearWindSpeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="@dimen/smallPadding">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                                style="@style/textSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/mediumPadding"
+                                android:text="@string/textWindSpeed" />
+
+                            <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+                                style="@style/textMedium"
+                                miles="@{dataModel.wind.speed}"
+                                toKM="@{dataModel.wind.toKM}"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <include layout="@layout/space_small" />
+
+                        <!--                        <include layout="@layout/separator_light_grey_line" />-->
+
+                        <include layout="@layout/space_small" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="@dimen/large_logo_size"
+                    android:layout_height="@dimen/large_logo_size"
+                    android:layout_gravity="center"
+                    app:animateVisibilityLeftRight="@{loadModel.showLayout}"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:setLoadResID="@{loadModel.showLayout}" />
+            </FrameLayout>
+
+            <include
+                android:id="@+id/errorContainer"
+                layout="@layout/error_layout"
+                bind:errorModel="@{errorModel}" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</layout>

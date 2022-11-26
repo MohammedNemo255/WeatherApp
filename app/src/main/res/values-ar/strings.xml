@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Weather App</string>
+
+    <!--Labels-->
+    <string name="textCities">المدن</string>
+    <string name="textWeatherCityInfo">%2$sتم تلقي معلومات الطقس لـ%1$s في</string>
+    <string name="textDescription">وصف:</string>
+    <string name="textTemp">درجة الحرارة:</string>
+    <string name="textHumidity">الرطوبة:</string>
+    <string name="textWindSpeed">سرعة الرياح:</string>
+    <string name="textCelsiusLabel">سيليزيوس</string>
+    <string name="textKelvinLabel">كلفن</string>
+    <string name="textKMH" >ك.م/س</string>
+    <string name="textMH" >ميل/س</string>
+    <string name="textHistorical">سجل</string>
+
+    <!--Action-->
+    <string name="actionEnterCityName">أدخل اسم الغرفة</string>
+    <string name="actionSave">حفظ</string>
+    <string name="actionCancel">إلغاء</string>
+    <string name="actionBack">تراجع</string>
+    <string name="actionDismiss">رفض</string>
+    <string name="actionRefresh">تحديث</string>
+    <string name="actionConfirm">تأكيد</string>
+    <string name="actionAddNewCity">أضف مدينة جديدة</string>
+
+    <!--Waiting-->
+    <string name="waitPleaseWait">الرجاء الإنتظار…</string>
+
+    <!--Errors-->
+    <string name="errorNoCitiesForNow">لا توجد مدن الآن!</string>
+    <string name="errorNoHistoryFound">لم يتم العثور على سجل!</string>
+
+    <!--Alert-->
+    <string name="alertConfirmDeleteThisCity">أكد حذف %1$s من القائمة</string>
+
+    <!--  Network Error Message -->
+    <string name="timeOutConnection">لم يتم الإرسال ، حاول  مرة أخرى</string>
+    <string name="authFailureError">خطأ في المصادقة</string>
+    <string name="serverError">خطأ أثناء الاتصال السيرفر</string>
+    <string name="networkError">خطأ في الشبكة</string>
+    <string name="parseError">خطأ فى تحليل البيانات</string>
+    <string name="textClientErrorMessage">خطأ العميل</string>
+    <string name="noInternetConnection">لا يوجد اتصال بالإنترنت</string>
+    <string name="textErrorMessage">حدث خطأ ما حاول مرة أخرى</string>
+    <string name="errorApplicationNotFound">التطبيق غير موجود في جهازك!</string>
+    <string name="errorBadRequest">طلب خاظئ</string>
+    <string name="errorForbidden">طلب محروم الدخول</string>
+    <string name="errorRequestNotFound">طلب غير موجود</string>
+    <string name="errorBadGateway">مدخل خاظئ</string>
+</resources>

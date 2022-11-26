@@ -1,0 +1,42 @@
+<resources>
+
+
+    <!--Padding  -->
+    <dimen name="xSmallPadding">@dimen/_1sdp</dimen>
+    <dimen name="smallPadding">@dimen/_2sdp</dimen>
+    <dimen name="mediumPadding">@dimen/_8sdp</dimen>
+    <dimen name="defaultPadding">@dimen/_16sdp</dimen>
+    <dimen name="largePadding">@dimen/_20sdp</dimen>
+    <dimen name="xLargePadding">@dimen/_24sdp</dimen>
+
+    <!--Space Size-->
+    <dimen name="spaceXSmallSize">@dimen/_1sdp</dimen>
+    <dimen name="spaceSmallSize">@dimen/_2sdp</dimen>
+    <dimen name="spaceMediumSize">@dimen/_8sdp</dimen>
+    <dimen name="spaceDefaultSize">@dimen/_16sdp</dimen>
+    <dimen name="spaceLargeSize">@dimen/_20sdp</dimen>
+    <dimen name="spaceXLargeSize">@dimen/_24sdp</dimen>
+
+    <!--Radius-->
+    <dimen name="smallCornerRadius">@dimen/_2sdp</dimen>
+    <dimen name="defaultCornerRadius">@dimen/_4sdp</dimen>
+    <dimen name="mediumCornerRadius">@dimen/_8sdp</dimen>
+    <dimen name="largeCornerRadius">@dimen/_12sdp</dimen>
+    <dimen name="xLargeCornerRadius">@dimen/_18sdp</dimen>
+    <dimen name="xxLargeCornerRadius">@dimen/_24sdp</dimen>
+
+    <!--Icon Image-->
+    <dimen name="smallIconSize">@dimen/_14sdp</dimen>
+    <dimen name="defaultIconSize">@dimen/_18sdp</dimen>
+    <dimen name="largeIconSize">@dimen/_24sdp</dimen>
+    <dimen name="xLargeIconSize">@dimen/_28sdp</dimen>
+
+    <!--Logo Size-->
+    <dimen name="x_mall_logo_size">@dimen/_50sdp</dimen>
+    <dimen name="small_logo_size">@dimen/_60sdp</dimen>
+    <dimen name="default_logo_size">@dimen/_70sdp</dimen>
+    <dimen name="large_logo_size">@dimen/_80sdp</dimen>
+    <dimen name="x_rage_logo_size">@dimen/_90sdp</dimen>
+    <dimen name="xx_large_logo_size">@dimen/_100sdp</dimen>
+    <dimen name="xxx_large_logo_size">@dimen/_120sdp</dimen>
+</resources>

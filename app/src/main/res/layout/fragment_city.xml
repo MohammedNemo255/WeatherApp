@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="loadModel"
+            type="com.nemodroid.weatherapp.utils.handler.LoadModel" />
+
+        <variable
+            name="errorModel"
+            type="com.nemodroid.weatherapp.utils.handler.ErrorModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/mediumPadding">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:animateVisibilityLeftRight="@{!errorModel.withError &amp;&amp; !loadModel.showLayout}">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:visibility="gone"
+                    app:animateVisibilityLeftRight="@{!errorModel.withError &amp;&amp; !loadModel.showLayout}" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="@dimen/large_logo_size"
+                    android:layout_height="@dimen/large_logo_size"
+                    android:layout_gravity="center"
+                    app:animateVisibilityLeftRight="@{loadModel.showLayout}"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:setLoadResID="@{loadModel.showLayout}" />
+            </FrameLayout>
+
+            <include
+                android:id="@+id/errorContainer"
+                layout="@layout/error_layout"
+                bind:errorModel="@{errorModel}" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</layout>

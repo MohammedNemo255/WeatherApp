@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="errorModel"
+            type="com.nemodroid.weatherapp.utils.handler.ErrorModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/largePadding"
+        android:visibility="gone"
+        app:animateVisibilityLeftRight="@{errorModel.withError}"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tvErrorSVGImage"
+            android:layout_width="@dimen/small_logo_size"
+            android:layout_height="@dimen/small_logo_size"
+            android:visibility="@{errorModel.withLottie ? View.GONE:View.VISIBLE}"
+            app:errorImageRes="@{errorModel.errorImageRes}"
+            app:imageResTint="@{errorModel.tintColor}" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/tvErrorLottieImage"
+            android:layout_width="@dimen/xxx_large_logo_size"
+            android:layout_height="@dimen/large_logo_size"
+            android:visibility="@{errorModel.withLottie ? View.VISIBLE:View.GONE}"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:setErrorLottieRes="@{errorModel.lottieRes}" />
+
+        <include layout="@layout/space_medium" />
+
+        <com.nemodroid.weatherapp.utils.views.textview.AutoResizeTextView
+            style="@style/textSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:colorMessage="@{errorModel.textColor}"
+            app:errorMessage="@{errorModel.errorMessage}" />
+
+        <include layout="@layout/space_medium" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnErrorAction"
+            style="@style/buttonDefaultCorner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="@dimen/defaultPadding"
+            android:paddingEnd="@dimen/defaultPadding"
+            android:textColor="@color/white"
+            android:visibility="@{errorModel.withAction ? View.VISIBLE : View.GONE}"
+            app:errorMessage="@{errorModel.actionText}" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

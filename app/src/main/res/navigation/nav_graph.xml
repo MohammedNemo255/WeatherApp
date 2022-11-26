@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/CityFragment">
+
+    <fragment
+        android:id="@+id/CityFragment"
+        android:name="com.nemodroid.weatherapp.framework.presentation.fragment.cities.CityFragment"
+        android:label="@string/textCities"
+        tools:layout="@layout/fragment_city" />
+    <fragment
+        android:id="@+id/WeatherInfoFragment"
+        android:name="com.nemodroid.weatherapp.framework.presentation.fragment.weather_info.WeatherInfoFragment"
+        tools:layout="@layout/fragment_weather_info" />
+    <fragment
+        android:id="@+id/HistoryFragment"
+        android:name="com.nemodroid.weatherapp.framework.presentation.fragment.history.HistoryFragment"
+        tools:layout="@layout/fragment_history" />
+</navigation>
